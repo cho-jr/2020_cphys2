@@ -65,11 +65,15 @@ svm = SVC(kernel = 'rbf', gamma = 'auto')
 svm.fit(X, y)
 svm_score2 = svm.score(X, y)
 print(svm_score2)
+
 plt.title("Fig.3 Suport Vector Machine Prediction")
+label = ['setosa', 'versicolor', 'virginica']
+color_list = list(set(svm.predict(X)))
+
 plt.scatter(X[:, 1], X[:, 3], c = svm.predict(X))
 plt.xlabel("Sepal width")
 plt.ylabel("petal width")
-#plt.legend()
+plt.legend({'setosa', 'versicolor', 'virginica'})
 plt.show()
 
 """
